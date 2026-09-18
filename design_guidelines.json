@@ -1,0 +1,84 @@
+{
+  "theme": "light",
+  "archetype": "Luxury & Organic (Warm Neutral Palette)",
+  "colors": {
+    "background": "#F9F9F6",
+    "surface": "#F3F2EE",
+    "surface_hover": "#EAE8E3",
+    "primary": "#C84B31",
+    "primary_hover": "#A63A23",
+    "text_main": "#1A1A1A",
+    "text_muted": "#4A4A44",
+    "border": "#E5E5E0"
+  },
+  "typography": {
+    "headings": {
+      "font": "Cormorant Garamond, Playfair Display, serif",
+      "style": "Elegant, editorial, high-contrast serif. Use tracking-tight for large text.",
+      "weights": "Light (300) or Regular (400) for elegance. Bold (700) sparingly."
+    },
+    "body": {
+      "font": "Manrope, Outfit, sans-serif",
+      "style": "Clean, highly legible, modern geometric.",
+      "weights": "Regular (400) for body, Medium (500) for UI labels."
+    }
+  },
+  "visual_enhancers": {
+    "shadows": "Minimalist. Avoid heavy drop shadows. Use subtle ambient shadows like shadow-[0_8px_32px_rgba(0,0,0,0.04)] for elevated elements.",
+    "borders": "1px solid delicate borders (border-[#E5E5E0]) to define cards without heavy contrast.",
+    "glassmorphism": "Use backdrop-blur-xl bg-[#F9F9F6]/80 for sticky headers and bottom mobile bars.",
+    "radius": "Subtle rounding. Use rounded-lg (8px) or rounded-xl (12px). Avoid excessive pill shapes except for primary CTA buttons."
+  },
+  "layouts": {
+    "spacing": "Generous white space. Use py-24 or py-32 for section spacing on desktop. Padding p-8 or p-12 inside major cards.",
+    "grids": "Bento-style grids for category highlights (e.g., col-span-2 row-span-2 for hero category). 3-to-4 column responsive grids for menu items.",
+    "containers": "Max-width 7xl (max-w-7xl) for main content to maintain editorial proportions."
+  },
+  "motion": {
+    "hover_states": "Images inside cards scale up slightly (scale-105) on hover with overflow-hidden on parent. Buttons have smooth background color transitions.",
+    "entrance": "Fade up (translate-y-4 to translate-y-0 with opacity 0 to 1) for menu sections as they scroll into view.",
+    "page_transitions": "Smooth and fast. Do not over-animate e-commerce flows (Cart/Checkout) to prevent friction."
+  },
+  "components_strategy": {
+    "navigation": "Sticky top glassmorphism header. Must include Logo, Links, and a prominent Cart icon with a badge for item count. Desktop: Full links. Mobile: Hamburger opening a clean full-screen menu.",
+    "product_card": "Editorial presentation. Large square image, minimalist typography underneath. Title (serif), Price (sans-serif, bold). An elegant 'Add to Cart' button that is either always visible (mobile) or fades in on hover (desktop).",
+    "cart": "Persistent Slide-out Drawer (Sheet component from Shadcn). Show items, subtotal, delivery calculation placeholder, and a clear checkout button.",
+    "checkout": "Progressive, step-based flow. Very clean, high-trust design with Stripe integration.",
+    "forms": "Use Shadcn inputs. Floating labels or very clean labels above inputs. No default browser focus rings; use focus:ring-1 focus:ring-[#C84B31] focus:border-[#C84B31]."
+  },
+  "accessibility": {
+    "contrast": "Ensure all text against the #F9F9F6 background meets at least AA standards.",
+    "focus": "Clear focus states on all interactive elements.",
+    "aria": "Include aria-labels for icon-only buttons (like the Cart or Favorites)."
+  },
+  "image_urls": {
+    "hero_interior": "https://images.pexels.com/photos/10633476/pexels-photo-10633476.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "signature_biryani": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwxfHxwYWtpc3RhbmklMjBiaXJ5YW5pJTIwZGlzaHxlbnwwfHx8fDE3ODU0ODY4MDR8MA&ixlib=rb-4.1.0&q=85",
+    "category_bbq": "https://images.unsplash.com/photo-1512719724284-dbb9ef47eac5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwxfHxzb3V0aCUyMGFmcmljYW4lMjBicmFhaSUyMGJicXxlbnwwfHx8fDE3ODU0ODY4MDN8MA&ixlib=rb-4.1.0&q=85",
+    "category_curry": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTZ8MHwxfHNlYXJjaHwxfHxuYWFuJTIwYnJlYWQlMjBjdXJyeXxlbnwwfHx8fDE3ODU0ODY4MDR8MA&ixlib=rb-4.1.0&q=85",
+    "category_dessert": "https://images.unsplash.com/photo-1452968011964-24f8831c43c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxOTB8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBmb29kJTIwcGxhdGluZyUyMGRlc3NlcnR8ZW58MHx8fHwxNzg1NDg2ODA0fDA&ixlib=rb-4.1.0&q=85",
+    "category_drinks": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwxfHxyZWZyZXNoaW5nJTIwY29ja3RhaWwlMjBkcmlua3xlbnwwfHx8fDE3ODU0ODY4MDR8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "instructions_to_main_agent": [
+    "Install Google Fonts in index.css: @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Manrope:wght@400;500;600&display=swap');",
+    "Apply fonts in tailwind.config.js: fontFamily: { serif: ['Cormorant Garamond', 'serif'], sans: ['Manrope', 'sans-serif'] }",
+    "Ensure all Shadcn components (Cards, Buttons, Inputs, Dialogs) are customized to match the Bone White and Terracotta palette, overriding default slate/zinc borders and backgrounds.",
+    "Add 'data-testid' attributes to all interactive elements for testing (e.g., data-testid='add-to-cart-button').",
+    "Build a robust e-commerce flow: React Context or Redux for Cart State, allowing Guest and Authenticated checkout.",
+    "Implement JWT + Google OAuth for user authentication.",
+    "Integrate a visually elegant delivery cost calculator in the checkout flow.",
+    "Avoid cringe or overly generic vector illustrations. Use the provided high-end photography.",
+    "Ensure image tags use object-cover and aspect-square or aspect-[4/5] for product photos."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Make creative, distinctive frontends that surprise and delight.",
+    "Create depth through layered design elements with z-index hierarchy, but keep the UI very clean.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for sticky navs and panels.",
+    "You MUST NOT apply universal transition. Eg: transition: all.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file.",
+    "Always use modern button styles, specifically for this app: sharp or slightly rounded corners with terracotta backgrounds and smooth hover transitions.",
+    "NEVER use AI assistant Emoji characters.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Use 'sonner' for toasts in /app/src/components/ui/sonner.js."
+  ]
+}
