@@ -12,6 +12,7 @@ import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import FAQ from '@/pages/FAQ';
 import Offers from '@/pages/Offers';
+import Jarvis from '@/pages/Jarvis';
 import Checkout from '@/pages/Checkout';
 import PaymentSuccess from '@/pages/PaymentSuccess';
 import PaymentCancel from '@/pages/PaymentCancel';
@@ -25,6 +26,7 @@ import '@/App.css';
 
 function AppRouter() {
   const location = useLocation();
+  const isJarvisPage = location.pathname === '/jarvis';
   
   // Check URL fragment (not query params) for session_id
   if (location.hash?.includes('session_id=')) {
@@ -33,9 +35,10 @@ function AppRouter() {
 
   return (
     <>
-      <Navbar />
+      {!isJarvisPage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/jarvis" element={<Jarvis />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -85,7 +88,7 @@ function AppRouter() {
           }
         />
       </Routes>
-      <Footer />
+      {!isJarvisPage && <Footer />}
     </>
   );
 }
